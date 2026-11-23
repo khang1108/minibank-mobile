@@ -1,0 +1,28 @@
+{
+  "targetId": "minibank-mobile",
+  "displayName": "MiniBank Mobile — Digital Banking API",
+  "repoRef": "https://github.com/khang1108/minibank-mobile.git",
+  "baseBranch": "main",
+  "runtime": {
+    "language": "node_ts",
+    "startCommand": "npm run start",
+    "healthUrl": "http://127.0.0.1:4102/health",
+    "testCommand": "npm test",
+    "envFile": ".env.sandbox"
+  },
+  "defaultSkillPacks": ["owasp-deep", "fintech-superapp-tt77"],
+  "dependencyManifests": [
+    {
+      "ecosystem": "npm",
+      "lockfilePath": "package-lock.json"
+    }
+  ],
+  "offlinePackageCache": "vendor",
+  "statePaths": ["src/store.ts"],
+  "invariantProbes": [
+    { "method": "GET", "path": "/me/limits", "jsonPath": "$.isPremium", "op": "eq", "value": false },
+    { "method": "GET", "path": "/me/limits", "jsonPath": "$.dailyTransferLimit", "op": "lte", "value": 50000000 },
+    { "method": "GET", "path": "/statements", "jsonPath": "$.userId", "op": "eq", "value": "u-demo-01" },
+    { "method": "GET", "path": "/statements", "jsonPath": "$.items", "op": "not_empty", "value": null }
+  ]
+}

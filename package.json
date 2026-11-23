@@ -1,0 +1,23 @@
+{
+  "name": "minibank-mobile",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "description": "AntFlow 24/7 Security Response fixture — simplified Mobile Banking API with pinned lodash@4.17.11 for Stream A/C testing. Not a real service.",
+  "scripts": {
+    "start": "tsx src/server.ts",
+    "test": "vitest run tests",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "fastify": "^5.3.2",
+    "lodash": "4.17.11"
+  },
+  "devDependencies": {
+    "@types/lodash": "^4.14.202",
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.4",
+    "typescript": "^5.8.3",
+    "vitest": "^3.1.4"
+  }
+}
