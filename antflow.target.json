@@ -2,6 +2,7 @@
   "targetId": "minibank-mobile",
   "displayName": "MiniBank Mobile — Digital Banking API",
   "repoRef": "https://github.com/khang1108/minibank-mobile.git",
+  "githubRepo": "khang1108/minibank-mobile",
   "baseBranch": "main",
   "runtime": {
     "language": "node_ts",
